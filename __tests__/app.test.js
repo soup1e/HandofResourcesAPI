@@ -2,6 +2,7 @@ const pool = require('../lib/utils/pool');
 const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
+const commandConvert = require('cross-env/src/command.js');
 
 describe('backend-express-template routes', () => {
   beforeEach(() => {
@@ -110,6 +111,21 @@ describe('backend-express-template routes', () => {
       filename: 'MattisEgestas.ppt',
     };
     expect(res.body).toEqual(expected);
+  });
+
+  it('POST /apps should create new app in database', async () => {
+    const altstore = {
+      app: 'AltStore',
+      version: '1.5.1',
+      bundleid: 'com.H9XY65GVL2.com.sam.AltStore',
+      filename: 'AltStore_1.5.1.ipa',
+    };
+    const res = await (await request(app).post('/apps')).send(altstore);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      ...altstore,
+    });
   });
   afterAll(() => {
     pool.end();
