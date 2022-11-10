@@ -128,6 +128,14 @@ describe('backend-express-template routes', () => {
     });
   });
 
+  it('PUT /apps/:id should update app', async () => {
+    const res = await request(app).put('/apps/1').send({
+      version: '1.6',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.version).toBe('1.6');
+  });
+
   afterAll(() => {
     pool.end();
   });
