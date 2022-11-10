@@ -120,13 +120,14 @@ describe('backend-express-template routes', () => {
       bundleid: 'com.H9XY65GVL2.com.sam.AltStore',
       filename: 'AltStore_1.5.1.ipa',
     };
-    const res = await (await request(app).post('/apps')).send(altstore);
+    const res = await request(app).post('/apps').send(altstore);
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
       id: expect.any(String),
       ...altstore,
     });
   });
+
   afterAll(() => {
     pool.end();
   });
