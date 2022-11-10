@@ -100,17 +100,15 @@ describe('backend-express-template routes', () => {
   });
 
   it('GET /id should return a single app', async () => {
-    const res = await request(app).get('/apps');
+    const res = await request(app).get('/apps/1');
     expect(res.status).toBe(200);
-    const expected = [
-      {
-        id: '1',
-        app: 'Alpha',
-        version: '7.3',
-        bundleid: 'gov.ftc.Y-Solowarm',
-        filename: 'MattisEgestas.ppt',
-      },
-    ];
+    const expected = {
+      id: '1',
+      app: 'Alpha',
+      version: '7.3',
+      bundleid: 'gov.ftc.Y-Solowarm',
+      filename: 'MattisEgestas.ppt',
+    };
     expect(res.body).toEqual(expected);
   });
   afterAll(() => {
