@@ -135,6 +135,14 @@ describe('backend-express-template routes', () => {
     expect(res.body.version).toBe('1.6');
   });
 
+  it('DELETE /apps/:id should delete apps', async () => {
+    const res = await request(app).delete('/apps/1');
+    expect(res.status).toBe(200);
+
+    const resp = await request(app).get('/apps/1');
+    expect(resp.status).toBe(404);
+  });
+
   afterAll(() => {
     pool.end();
   });
