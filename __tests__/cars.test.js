@@ -121,6 +121,11 @@ describe('backend-express-template routes', () => {
     expect(res.body.year).toBe(2023);
   });
 
+  it('DELETE /cars/:id should delete car', async () => {
+    const res = await request(app).delete('/cars/3');
+    expect(res.status).toBe(200);
+  });
+
   afterAll(() => {
     pool.end();
   });
