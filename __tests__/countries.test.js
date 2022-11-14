@@ -108,6 +108,14 @@ describe('backend-express-template routes', () => {
     };
     expect(res.body).toEqual(expected);
   });
+
+  it('PUT /countries/:id should update countries', async () => {
+    const res = await request(app).put('/countries/1').send({
+      timezone: 'Asia/Beijing',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.timezone).toBe('Asia/Beijing');
+  });
   afterAll(() => {
     pool.end();
   });
