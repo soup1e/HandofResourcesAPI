@@ -113,6 +113,13 @@ describe('backend-express-template routes', () => {
     });
   });
 
+  it('PUT /cars/:id should update car', async () => {
+    const res = await request(app).put('/cars/1').send({
+      year: 2023,
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.year).toBe('2023');
+  });
   afterAll(() => {
     pool.end();
   });
