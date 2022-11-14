@@ -94,6 +94,20 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
+
+  it('GET /id should return a single country', async () => {
+    const res = await request(app).get('/countries/1');
+    expect(res.status).toBe(200);
+    const expected = {
+      id: '1',
+      country: 'China',
+      currency: 'Yuan Renminbi',
+      countrycode: 'CN',
+      currencycode: 'CNY',
+      timezone: 'Asia/Chongqing',
+    };
+    expect(res.body).toEqual(expected);
+  });
   afterAll(() => {
     pool.end();
   });
