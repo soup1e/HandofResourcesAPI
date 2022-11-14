@@ -8,8 +8,8 @@ describe('backend-express-template routes', () => {
     return setup(pool);
   });
 
-  it('GET /apps should return a list of apps', async () => {
-    const res = await request(app).get('/apps');
+  it('GET /countries should return a list of countries', async () => {
+    const res = await request(app).get('/countries');
     expect(res.status).toBe(200);
     expect(res.body).toEqual([
       {
