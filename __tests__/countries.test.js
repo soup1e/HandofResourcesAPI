@@ -116,6 +116,22 @@ describe('backend-express-template routes', () => {
     expect(res.status).toBe(200);
     expect(res.body.timezone).toBe('Asia/Beijing');
   });
+
+  it('POST /countries should create new country in database', async () => {
+    const thailand = {
+      country: 'Thailand',
+      currency: 'Baht',
+      countrycode: 'TH',
+      currencycode: 'THB',
+      timezone: 'Asia/Bangkok',
+    };
+    const res = await request(app).post('/countries').send(thailand);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      ...thailand,
+    });
+  });
   afterAll(() => {
     pool.end();
   });
