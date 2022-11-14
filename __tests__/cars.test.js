@@ -99,6 +99,20 @@ describe('backend-express-template routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('POST /cars should create new car in database', async () => {
+    const supra = {
+      brand: 'Toyota',
+      name: 'GR Supra',
+      year: 2023,
+    };
+    const res = await request(app).post('/cars').send(supra);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      ...supra,
+    });
+  });
+
   afterAll(() => {
     pool.end();
   });
