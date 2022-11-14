@@ -86,6 +86,19 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
+
+  it('GET /id should return a single car', async () => {
+    const res = await request(app).get('/cars/1');
+    expect(res.status).toBe(200);
+    const expected = {
+      id: '1',
+      brand: 'Toyota',
+      name: 'GR86',
+      year: 2022,
+    };
+    expect(res.body).toEqual(expected);
+  });
+
   afterAll(() => {
     pool.end();
   });
