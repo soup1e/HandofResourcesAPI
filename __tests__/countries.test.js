@@ -132,6 +132,13 @@ describe('backend-express-template routes', () => {
       ...thailand,
     });
   });
+
+  it('DELETE /countries/:id should delete countries', async () => {
+    const expected = await request(app).get('/countries/2');
+    const res = await request(app).delete('/countries/2');
+    expect(res.body).toEqual(expected.body);
+  });
+
   afterAll(() => {
     pool.end();
   });
