@@ -122,8 +122,9 @@ describe('backend-express-template routes', () => {
   });
 
   it('DELETE /cars/:id should delete car', async () => {
-    const res = await request(app).delete('/cars/3');
-    expect(res.status).toBe(200);
+    const expected = await request(app).get('/cars/2');
+    const res = await request(app).delete('/cars/2');
+    expect(res.body).toEqual(expected.body);
   });
 
   afterAll(() => {
