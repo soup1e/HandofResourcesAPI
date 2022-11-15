@@ -93,6 +93,12 @@ describe('backend-express-template routes', () => {
     expect(res.body.password).toBe('swagboss1@');
   });
 
+  it('DELETE /users/:id should delete users', async () => {
+    const expected = await request(app).get('/users/2');
+    const res = await request(app).delete('/users/2');
+    expect(res.body).toEqual(expected.body);
+  });
+
   afterAll(() => {
     pool.end();
   });
