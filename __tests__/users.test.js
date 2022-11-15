@@ -85,6 +85,14 @@ describe('backend-express-template routes', () => {
     });
   });
 
+  it('PUT /users/:id should update users', async () => {
+    const res = await request(app).put('/users/1').send({
+      password: 'swagboss1@',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.password).toBe('swagboss1@');
+  });
+
   afterAll(() => {
     pool.end();
   });
