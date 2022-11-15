@@ -77,7 +77,7 @@ CREATE TABLE employees (
     name VARCHAR NOT NULL,
     first VARCHAR NOT NULL,
     gender VARCHAR NOT NULL,
-    job VARCHAR,
+    job VARCHAR
 );
 
 INSERT INTO employees (name, first, gender, job)
@@ -91,7 +91,7 @@ VALUES
 ('Jocko Reynish', 'Jocko', 'M', 'Environmental Specialist'),
 ('Mei Leeburne', 'Mei', 'F', 'VP Quality Control'),
 ('Jeremie Bandy', 'Jeremie', 'M', 'Editor'),
-('Kristofer Meatcher', 'Kristofer', 'M', 'Legal Assistant'),
+('Kristofer Meatcher', 'Kristofer', 'M', 'Legal Assistant');
 
 CREATE TABLE users (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
@@ -116,4 +116,3 @@ VALUES
 ('fsuerz9@desdev.cn', 'bgrishenkov9', 'ZQlnwk1ll', 'https://robohash.org/eaeasint.png?size=50x50&set=set1', '95.46.189.37'),
 ('rfairbridgea@cnet.com', 'kpeasea', 'Ws6n6S2dwJC', 'https://robohash.org/quianonhic.png?size=50x50&set=set1', '239.51.11.252'),
 ('lwreifordb@canalblog.com', 'fduckerb', 'Tns44ldaGy', 'https://robohash.org/ullamenimad.png?size=50x50&set=set1', '21.232.135.220');
-
