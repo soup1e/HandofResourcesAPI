@@ -56,6 +56,19 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
+
+  it('GET /users should return a single user', async () => {
+    const res = await request(app).get('/users/1');
+    expect(res.status).toBe(200);
+    const expected = {
+      id: '1',
+      email: 'kprestwich0@constantcontact.com',
+      username: 'bchampionnet0',
+      password: '2SMDddm9Tix',
+      ip: '2.122.246.150',
+    };
+    expect(res.body).toEqual(expected);
+  });
   afterAll(() => {
     pool.end();
   });
