@@ -112,7 +112,18 @@ describe('backend-express-template routes', () => {
       ...sam,
     });
   });
-  afterAll(() => {
-    pool.end();
+
+  it('PUT /employees/:id should update employee', async () => {
+    const res = await request(app).put('/employees/1').send({
+      name: 'Bruce Wayne',
+      first: 'Bruce',
+      gender: 'M',
+      job: 'Dark Knight',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.name).toBe('Bruce Wayne');
   });
+});
+afterAll(() => {
+  pool.end();
 });
