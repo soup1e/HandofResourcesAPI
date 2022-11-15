@@ -69,6 +69,22 @@ describe('backend-express-template routes', () => {
     };
     expect(res.body).toEqual(expected);
   });
+
+  it('POST /users should create new user in database', async () => {
+    const bob = {
+      email: 'bobthebuilder@wecanfixit.com',
+      username: 'bmoney1017',
+      password: 'builderman1!',
+      ip: '1.107.200.302',
+    };
+    const res = await request(app).post('/users').send(bob);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      ...bob,
+    });
+  });
+
   afterAll(() => {
     pool.end();
   });
