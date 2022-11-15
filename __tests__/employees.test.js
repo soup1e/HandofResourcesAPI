@@ -123,14 +123,14 @@ describe('backend-express-template routes', () => {
     expect(res.status).toBe(200);
     expect(res.body.name).toBe('Bruce Wayne');
   });
-});
 
-it('DELETE /employees/:id should delete employee', async () => {
-  const expected = await request(app).get('/employees/2');
-  const res = await request(app).delete('/employees/2');
-  expect(res.body).toEqual(expected.body);
-});
+  it('DELETE /employees/:id should delete employee', async () => {
+    const expected = await request(app).get('/employees/2');
+    const res = await request(app).delete('/employees/2');
+    expect(res.body).toEqual(expected.body);
+  });
 
-afterAll(() => {
-  pool.end();
+  afterAll(() => {
+    pool.end();
+  });
 });

@@ -1,0 +1,62 @@
+const pool = require('../lib/utils/pool');
+const setup = require('../data/setup');
+const request = require('supertest');
+const app = require('../lib/app');
+
+describe('backend-express-template routes', () => {
+  beforeEach(() => {
+    return setup(pool);
+  });
+
+  it('GET /users should return a list of users', async () => {
+    const res = await request(app).get('/users');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([
+      {
+        id: '1',
+        email: 'kprestwich0@constantcontact.com',
+        username: 'bchampionnet0',
+        password: '2SMDddm9Tix',
+        ip: '2.122.246.150',
+      },
+      {
+        id: '2',
+        email: 'gbrearton1@quantcast.com',
+        username: 'aslimme1',
+        password: 'KaLiJxf',
+        ip: '23.4.210.165',
+      },
+      {
+        id: '3',
+        email: 'asenussi2@shop-pro.jp',
+        username: 'ljirsa2',
+        password: '62XUGTJEQ',
+        ip: '157.157.112.236',
+      },
+      {
+        id: '4',
+        email: 'lgregor3@ebay.com',
+        username: 'slodeke3',
+        password: 'Q6vQdI1i',
+        ip: '170.14.21.184',
+      },
+      {
+        id: '5',
+        email: 'rcathee4@thetimes.co.uk',
+        username: 'jcowderay4',
+        password: 'Jl7gjP',
+        ip: '204.139.229.230',
+      },
+      {
+        id: '6',
+        email: 'lwreifordb@canalblog.com',
+        username: 'fduckerb',
+        password: 'Tns44ldaGy',
+        ip: '21.232.135.220',
+      },
+    ]);
+  });
+  afterAll(() => {
+    pool.end();
+  });
+});

@@ -98,21 +98,14 @@ CREATE TABLE users (
     email VARCHAR NOT NULL,
     username VARCHAR NOT NULL,
     password VARCHAR NOT NULL,
-    avatar VARCHAR,
     ip VARCHAR
 );
 
-INSERT INTO users (email, username, password, avatar, ip)
+INSERT INTO users (email, username, password, ip)
 VALUES
-('kprestwich0@constantcontact.com', 'bchampionnet0', '2SMDddm9Tix', 'https://robohash.org/anecessitatibusfacere.png?size=50x50&set=set1', '2.122.246.150'),
-('gbrearton1@quantcast.com', 'aslimme1', 'KaLiJxf', 'https://robohash.org/magniquisut.png?size=50x50&set=set1', '23.4.210.165'),
-('asenussi2@shop-pro.jp', 'ljirsa2', '62XUGTJEQ', 'https://robohash.org/sitametcorporis.png?size=50x50&set=set1', '157.157.112.236'),
-('lgregor3@ebay.com', 'slodeke3', 'Q6vQdI1i', 'https://robohash.org/adipiscidoloribusvoluptatem.png?size=50x50&set=set1', '170.14.21.184'),
-('rcathee4@thetimes.co.uk', 'jcowderay4', 'Jl7gjP', 'https://robohash.org/occaecatidolorumaccusantium.png?size=50x50&set=set1', '204.139.229.230'),
-('bduggon5@mail.ru', 'bcurgenuer5', 'SK1xBT9l6UFy', 'https://robohash.org/quieiuset.png?size=50x50&set=set1', '150.64.74.104'),
-('agretham6@sun.com', 'sjado6', 'vkko6fyse3d', 'https://robohash.org/omnisdebitisquo.png?size=50x50&set=set1', '143.168.47.46'),
-('mmaster7@vkontakte.ru', 'tcooksey7', '8xGKzPr', 'https://robohash.org/solutaautest.png?size=50x50&set=set1', '131.119.231.38'),
-('bemeney8@addthis.com', 'atunnock8', 'KoWLlAwU9EGD', 'https://robohash.org/molestiaenisinumquam.png?size=50x50&set=set1', '136.223.128.104'),
-('fsuerz9@desdev.cn', 'bgrishenkov9', 'ZQlnwk1ll', 'https://robohash.org/eaeasint.png?size=50x50&set=set1', '95.46.189.37'),
-('rfairbridgea@cnet.com', 'kpeasea', 'Ws6n6S2dwJC', 'https://robohash.org/quianonhic.png?size=50x50&set=set1', '239.51.11.252'),
-('lwreifordb@canalblog.com', 'fduckerb', 'Tns44ldaGy', 'https://robohash.org/ullamenimad.png?size=50x50&set=set1', '21.232.135.220');
+('kprestwich0@constantcontact.com', 'bchampionnet0', '2SMDddm9Tix', '2.122.246.150'),
+('gbrearton1@quantcast.com', 'aslimme1', 'KaLiJxf', '23.4.210.165'),
+('asenussi2@shop-pro.jp', 'ljirsa2', '62XUGTJEQ', '157.157.112.236'),
+('lgregor3@ebay.com', 'slodeke3', 'Q6vQdI1i', '170.14.21.184'),
+('rcathee4@thetimes.co.uk', 'jcowderay4', 'Jl7gjP', '204.139.229.230'),
+('lwreifordb@canalblog.com', 'fduckerb', 'Tns44ldaGy', '21.232.135.220');
