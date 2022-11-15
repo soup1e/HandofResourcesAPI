@@ -98,6 +98,20 @@ describe('backend-express-template routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('POST /employees should create new employee in database', async () => {
+    const sam = {
+      name: 'Sam Adams',
+      first: 'Sam',
+      gender: 'M',
+      job: 'Software Developer',
+    };
+    const res = await request(app).post('/employees').send(sam);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      ...sam,
+    });
+  });
   afterAll(() => {
     pool.end();
   });
