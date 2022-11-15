@@ -84,6 +84,20 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
+
+  it('GET /id should return a single employee', async () => {
+    const res = await request(app).get('/employees/1');
+    expect(res.status).toBe(200);
+    const expected = {
+      id: '1',
+      name: 'Adolphe Nason',
+      first: 'Adolphe',
+      gender: 'M',
+      job: 'Financial Analyst',
+    };
+    expect(res.body).toEqual(expected);
+  });
+
   afterAll(() => {
     pool.end();
   });
