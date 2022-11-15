@@ -74,28 +74,24 @@ VALUES
 
 CREATE TABLE employees (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
-    fullname VARCHAR NOT NULL,
+    name VARCHAR NOT NULL,
     first VARCHAR NOT NULL,
     gender VARCHAR NOT NULL,
     job VARCHAR,
-    school VARCHAR,
-    skill VARCHAR
 );
 
-INSERT INTO employees (fullname, first, gender, job, school, skill)
+INSERT INTO employees (name, first, gender, job)
 VALUES
-('Adolphe Nason', 'Adolphe', 'M', 'Financial Analyst', 'Ufa State Institute of Arts', 'Shrinkage'),
-('Starla Molineaux', 'Starla', 'F', 'Associate Professor', 'Universidad de Hermosillo', 'Zinc'),
-('Rowen Sedgemore', 'Rowen', 'M', 'Junior Executive', 'University of Phoenix', 'Biodiversity'),
-('Gilberto Starbeck', 'Gilberto', 'M', 'Recruiting Manager', 'Universidad Católica Tecnológica del Cibao', 'UVLayout'),
-('Barbabas Geri', 'Barbabas', 'M', 'Accountant IV', 'Chonju National University of Education', 'IT Transformation'),
-('Frank Lifton', 'Frank', 'M', 'General Manager', 'University of Agriculture Abeokuta', 'IDS'),
-('Jocko Reynish', 'Jocko', 'M', 'Environmental Specialist', 'University of Connecticut', 'AQTESOLV'),
-('Mei Leeburne', 'Mei', 'F', 'VP Quality Control', 'St. Joseph''s College New York, Suffolk Campus', 'Award Ceremonies'),
-('Jeremie Bandy', 'Jeremie', 'M', 'Editor', 'Deutsche Telekom Fachhochschule Leipzig', 'Hummingbird DM'),
-('Kristofer Meatcher', 'Kristofer', 'M', 'Legal Assistant', 'SRM Institute Of Science & Technology ( Deemed University)', 'Apartments'),
-('Blanche MacGlory', 'Blanche', 'F', 'Editor', 'Instituto Politécnico de Leiria', 'SQL PL'),
-('Mildrid Antley', 'Mildrid', 'F', 'Data Coordiator', 'St Theresa''s Medical University', 'AWR Microwave Office');
+('Adolphe Nason', 'Adolphe', 'M', 'Financial Analyst'),
+('Starla Molineaux', 'Starla', 'F', 'Associate Professor'),
+('Rowen Sedgemore', 'Rowen', 'M', 'Junior Executive'),
+('Gilberto Starbeck', 'Gilberto', 'M', 'Recruiting Manager'),
+('Barbabas Geri', 'Barbabas', 'M', 'Accountant IV'),
+('Frank Lifton', 'Frank', 'M', 'General Manager'),
+('Jocko Reynish', 'Jocko', 'M', 'Environmental Specialist'),
+('Mei Leeburne', 'Mei', 'F', 'VP Quality Control'),
+('Jeremie Bandy', 'Jeremie', 'M', 'Editor'),
+('Kristofer Meatcher', 'Kristofer', 'M', 'Legal Assistant'),
 
 CREATE TABLE users (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
